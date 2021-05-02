@@ -1,0 +1,164 @@
+# LogicaDeProgramacion
+
+[UNIVERSIDAD PONTIFICIA BOLIVARIA SECCIONAL BUCARAMANGA
+FACULTAD DE INGENIERÍA DE SISTEMAS E INFORMÁTICA
+LÓGICA DE PROGRAMACIÓN
+Felix Andrés Asela García
+Id: 000460624
+
+Quiz 2.4 
+ 
+Objetivos:
+•	El estudiante estará en capacidad aplicar los conceptos estudiados en clase sobre arreglos unidimensionales y listas para resolver problemas con el lenguaje Python.
+
+•	El estudiante participará activamente en clase en la solución de los problemas planteados, compartiendo código, explicaciones y opiniones sobre las soluciones propuestas en la clase.
+
+•	El estudiante trabajará organizadamente todo su código fuente en su repositorio de GitHub y comentará este código fuente. 
+
+
+Ejercicio 1
+Crea un array o arreglo unidimensional donde le indiques el tamaño por teclado y crear una función que rellene el array o arreglo con los múltiplos de un número pedido por teclado. 
+Por ejemplo, si defino un array de tamaño 5 y elijo un 3 en la función, el array contendrá 3, 6, 9, 12, 15. Muéstralos por pantalla usando otra función distinta.
+Solución propuesta	Solución mejorada/Otra solución
+n = int(input("Ingrese el tamaño del arreglo"))
+m = int(input("Ingrese el número de múltiplos"))
+a = []
+for i in range (1,n+1):
+ a.append(i*m)
+print (a)
+	lista_multiplos = []
+agregar = True
+while agregar == True: #Un bucle para que calcule todas las veces que requiera el usuario
+    tamaño_arreglo = int(input("Ingrese el tamaño del arreglo = "))
+    numero_multiplos = int(input("Ingrese el número de múltiplos = "))
+    for i in range (1,tamaño_arreglo+1): #Se determina un range el cual va desde 1, y el mismo valor que se ingresa en la variable se va incrementenado en 1.
+        lista_multiplos.append(i*numero_multiplos)
+    print ("Los" + " " + str(tamaño_arreglo) + " " + "múltiplos de " + " " + str(numero_multiplos) + " " + "son = " + " " + ", ".join(map(str,lista_multiplos)))
+    agregar = input("Quieres agregar más valores? True or False = ")
+print('Ha terminado el programa exitosamente.')
+
+
+Ejercicio 2
+Crea dos vectores o arreglo unidimensionales que tengan el mismo tamaño (lo pedirá por teclado), en uno de ellos almacenarás nombres de personas como cadenas, en el otro array o arreglo irá almacenando la longitud de los nombres.
+Solución propuesta	Solución mejorada/Otra solución
+A = int(input("Ingresa el tamaño de los arreglos "))
+B = []
+C = []
+for i in range (0,A):
+ B.append(input("Ingresa el nombre de las personas "))
+print (B)
+for j in range (0,A):
+ C.append(len(B[j]))
+print (C)
+	A = int(input("cuantos nombres de personas quieres ingresar? "))
+B = []
+C = []
+x=0
+y=0
+for i in range (0,A): # #Range agrega los nombres a la lista hasta el límite que se determina en la variable A.
+ B.append(input("Ingresa el nombre de una persona a la que quieras agregrar a la lista "))
+print ("estos son todos los nombres:",B)
+for j in range (0,A): # Range cuenta la cantidad de carácteres de cada valor ingresado determinado por la variable A.
+ C.append(len(B[j]))
+ print("el nombre",B[x],"tiene",C[y],"letras")
+ x=x+1
+ y=y+1
+
+
+Ejercicio 3
+Escribe un programa que almacene los cursos de Matemáticas, Física, Química, Historia y Lenguaje en una lista, pregunta al usuario la nota que ha sacado en cada curso, después muestre por pantalla cada una de las correspondientes notas introducidas por el usuario.
+
+Solución propuesta	Solución mejorada/Otra solución
+subjects = ["Matemáticas", "Física", "Química", "Historia", "Lenguaje"]
+scores = []
+for subject in subjects:
+    score = input("¿Qué nota has sacado en " + subject + "?")
+    scores.append(score)
+for i in range(len(subjects)):
+    print("En " + subjects[i] + " has sacado " + scores[i])
+	suma = cursos = ["Matemáticas", "Física", "Química", "Historia", "Lenguaje"]
+lista = []
+for orden in cursos:
+    notas = float(input("Digite sus notas en " + orden + ": ")) # Se piden las notas al usuario
+    lista.append(notas) # Se almacenan las notas en la lista
+print("Las notas digitadas fueron: " + str(lista))
+
+
+Ejercicio 4
+Evalúa los siguientes códigos y pon en la casilla de la derecha la salida.
+Solución propuesta	Solución mejorada/Otra solución
+
+datos = [4,5,9,10]
+for i in range(0, 4):
+    print(datos[i], end=" ")
+print()
+	
+ 
+
+datos[2]=-10
+for i in range(0, len(datos)):
+    print(datos[i], end=" ")
+print()
+	#Arreglo
+datos= (-2, -10)
+for i in range(0, len(datos)):
+    print(datos[i], end=" ")
+print()
+
+datos.insert(1, 11)
+for i in range(0, len(datos)):
+    print(datos[i], end=" ")
+print()
+	#Arreglo
+datos = (1, 11)
+for i in range(0, len(datos)):
+    print(datos[i], end=" ")
+print()
+
+datos.remove(5)
+for i in range(0, len(datos)):
+    print(datos[i], end=" ")
+print()
+	#Arreglos
+datos = (5, 2)
+for i in range(0, len(datos)):
+    print(datos[i], end=" ")
+print()
+
+datos = datos + [21, 22]
+for i in range(0, len(datos)):
+    print(datos[i], end=" ")
+print()
+	#Arreglo
+datos = [21, 22]
+for i in range(0, len(datos)):
+    print(datos[i], end=" ")
+print()
+
+
+Ejercicio 5. 
+Escribe un programa que almacene el abecedario en una lista, elimine de la lista las letras que ocupen posiciones múltiplos de 3 y muestre por pantalla la lista resultante.
+Solución propuesta
+
+alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] #Se almacena una lista con las letras del abecedario
+for i in range(len(alfabeto), 1, -1):
+    if i % 3 == 0:      #Si una letra está ubicada en un multiplo de 3, no aparece en el resultado
+        alfabeto.pop(i-1)    #Con la función .pop se elimina los números multiplos de 3
+print(alfabeto)       #Se imprime el abecedario
+
+
+Ejercicio 6.
+Escribe un programa que pida al usuario una palabra y muestre por pantalla si es un palíndromo.
+Ejemplos: sometemos, arenera, ana, oso.
+
+Solución propuesta
+Palabra = input("introduce una palabra: ")
+reversed palabra = palabra
+palabra = list(palabra)
+reversed palabra = list(reversed palabra)
+reversed palabra.reverse()
+if palabra == reversed palabra:
+    print("Es un palídromo")
+else:
+    print("No es un palíndromo")
+
