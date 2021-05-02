@@ -1,0 +1,55 @@
+# LogicaDeProgramacion
+#Método 1
+def resta(a, b):
+    return (a-b)
+print(resta(30, 10))
+#Método 2
+operacion = lambda a,b: a-b
+print(operacion(30, 10))
+
+#02
+result = ord('a') # La función ord nos retorna un valor respectivo a lo ingresado de acuerdo a las tabla Unicode
+print(result) #Devuelve el número 97, ya que es respectivo a la letra ingresada
+'''-------------------------------------------------------------------------------------------------'''
+result2 = ord('$') # La función ord nos retorna un valor respectivo a lo ingresado de acuerdo a las tabla Unicode
+print(result2) #Devuelve el número 36, ya que es respectivo al símbolo ingresado
+
+#03
+cadena = 'python' #Ingresa la cadena 
+print(list(reversed(cadena))) # Devuelve el valor de python al revés en forma de lista ['n', 'o', 'h', 't', 'y', 'p']
+
+#SUMA 04
+import math #Se importa la librería math de python
+a = float(input())#Se establece la primera entrada de datos, en este caso el valor a
+b = float(input())#Se establece la primera entrada de datos, en este caso el valor b
+def suma(a,b): #Define la función  
+    return math.floor(a + b) #Return para desarrollara la operación y el uso de la librería importada 
+print(suma(a,b)) #Devuelve la suma respectiva a los valores ingresados
+
+#Decorador 05
+# a(b) --> c
+def my_costume_decorator(function): #Funcion_b = saludar
+
+    def wrapper(*args, **kwargs): #parámetros argumentos *args, **kwargs
+        return function(*args, **kwargs) #funcion_b
+    return wrapper
+@my_costume_decorator
+def saludar(): #Saludar por medio de @funcion_a se convierte en el parámetro funcion_b
+    print('Hola')
+#NUEVO
+@my_costume_decorator   
+def suma(a, b):
+    return a + b
+print(suma(10, 30))
+
+
+#06
+import time
+def calcular_tiempo(function):
+
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = function(*args, **kwargs)
+        print("Tiempo total = ", time.time() - start )
+        return result
+    return 
