@@ -1,0 +1,332 @@
+# LogicaDeProgramacion
+#01
+direccion=input("Ingrese el correo de email = ")
+def validar(direccion):
+    if direccion.find('@' and ('.com' or '.co')) >= 0:
+        print("Dirección válida")
+    else:
+        print("Dirección inválida")
+validar(direccion)
+
+#02
+def sumaDigitos(numero):
+    suma=0
+    while numero!=0:
+        digito=numero%10
+        suma=suma+digito
+        numero=numero//10
+    return suma
+num=int(input("Ingrese el número a procesar: "))
+while num!=0:
+    print("La suma total es:",sumaDigitos(num))
+    num=int(input("Número a procesar: "))
+
+#03
+def sumaDigitos(numero): 
+    suma=0
+    while numero!=0:
+        digito=numero%10
+        suma=suma+digito
+        numero=numero//10
+    return suma
+    
+sumatoria=0
+num=int(input("Ingrese el número a procesar, si desea dejar de ingresar datos escribir el 0: "))
+while num!=0:
+    print("La suma total es:",sumaDigitos(num))
+    sumatoria=sumatoria+num
+    num=int(input("Número a procesar: "))
+print("La sumatoria es:", sumatoria)
+print("Los dígitos son:", sumaDigitos(sumatoria))
+
+#04
+agregar = "si"
+def primo(num):
+    for i in range(2,num):
+        if num%i==0:           
+            return False
+    return True
+while agregar == "si":
+    numero=int(input("Ingrese un número a evaluar: "))
+    if primo(numero):
+        print("El número" + " " + str(numero) + " es primo.")
+    else:
+        print("El número" + " " + str(numero) + " no es primo.")
+    agregar = input("¿Quieres agregar otro número? si o no =")
+    if agregar == "no":
+        print("No vuelva :D")
+
+Taller 14-abril
+
+UNIVERSIDAD PONTIFICIA BOLIVARIA SECCIONAL BUCARAMANGA
+FACULTAD DE INGENIERÍA DE SISTEMAS E INFORMÁTICA
+LÓGICA DE PROGRAMACIÓN
+
+Felix Andrés Asela García
+Id: 000460624
+Taller colaborativo de funciones
+ 
+Objetivos:
+•	El estudiante estará en capacidad aplicar los conceptos estudiados en clase sobre el uso de las funciones para resolver problemas con el lenguaje Python.
+
+•	El estudiante participará activamente en clase en la solución de los problemas planteados, compartiendo código, explicaciones y opiniones sobre las soluciones propuestas en la clase.
+
+•	El estudiante trabajará organizadamente todo su código fuente en su repositorio de GitHub y comentará este código fuente. 
+
+Ejercicios.
+Cuando resuelvas los ejercicios estarás actuando como el “programador”, o sea la persona que diseña y escribe el programa en este caso en Python. Pero luego tendrás que ejecutar tu código y probar si funciona correctamente, y en este caso actuarás como el “usuario”, o sea alguien que utiliza el programa. 
+No siempre el programador y el usuario son la misma persona y, generalmente, los usuarios no conocen los detalles técnicos ni pueden ver el código, solo verán la salida en pantalla que les muestre el programa. 
+Considera entonces que siempre se debe pensar en términos de usabilidad, es decir que los mensajes para el usuario sean claros y le permitan ingresar los datos que en realidad tú necesitas como programador. 
+Se debe procurar que nuestro programa funcione de forma consistente y sin errores en todos los casos.
+
+A continuación, se pide desarrollar una serie de ejercicios con funciones, puede que exista otra manera de hacerlo, pero en este caso, se piden con funciones (def – definidas por el usuario). 
+Lo que sí puedes hacer es mejorar el código propuesto y dar otras alternativas de solución optimizando el uso de funciones.
+Compartir hace que todos aprendamos.
+
+
+
+
+
+
+1.	Solicitar al usuario que ingrese su dirección de correo electrónico. Imprimir un mensaje indicando si la dirección es válida o no, valiéndose de una función para decidirlo. Una dirección se considerará válida si contiene el símbolo "@".
+Solución propuesta en clase	Solución propuesta en clase insegura 1.	Otra solución (?)
+def validar(email):
+    caracterBuscado="@"
+    emailValido=False
+    for c in email:
+        if c==caracterBuscado:
+            return True
+    return False
+
+ 
+direccion=input("Tu email: ")
+if validar(direccion):
+    print("Dirección válida")
+else:
+    print("Dirección inválida")
+	direccion = input("Ingrese el correo email = ")
+def validar(direccion):
+    if direccion.find("@" and (".com" or ".co")) >= 0 :
+        print("Direccion valida")
+    else:
+        print("direccion no valida")
+validar(direccion)
+	
+
+
+2.	Solicitar números al usuario hasta que ingrese el cero. Por cada uno, mostrar la suma de sus dígitos (utilizando una función que realice dicha suma).
+
+def sumaDigitos(numero):
+    suma = 0
+    while numero != 0:
+        digito = numero % 10
+        suma = suma + digito
+        numero = numero // 10
+    return suma
+
+
+num = int(input("Digite números menores que 10 sin espacios entre sí, ni símbolos y estos serán sumados, para terminar digite 0: "))
+while num != 0:
+    print("Suma:", sumaDigitos(num))
+    num = int(input("Digite números menores que 10 sin espacios entre sí, ni símbolos y estos serán sumados, para terminar digite 0: "))
+
+
+3.	Solicitar números al usuario hasta que ingrese el cero. Por cada uno, mostrar la suma de sus dígitos. Al finalizar, mostrar la sumatoria de todos los números ingresados y la suma de sus dígitos. Reutilizar la misma función realizada en el ejercicio 2.
+
+
+
+def sumaDigitos(numero):
+    suma = 0
+    while numero != 0:
+        digito = numero % 10
+        suma = suma + digito
+        numero = numero // 10
+    return suma
+
+
+sumatoria = 0
+num = int(input("Digite números menores que 10 sin espacios entre sí, ni símbolos y estos serán sumados: "))
+while num != 0:
+    print("Suma:", sumaDigitos(num))
+    sumatoria = sumatoria + num
+    num = int(input("Digite números menores que 10 sin espacios entre sí, ni símbolos y estos serán sumados: "))
+
+
+4.	Solicitar al usuario que ingrese un número entero e informarle si es primo o no, utiliza en el código una función booleana que lo decida.
+
+ 
+cond="si" 
+def primo(num): 
+   for i in range(2,num): 
+       if num%i==0:            
+           return False 
+   return True 
+while cond == "si": 
+    numero=int(input("ingrese un Número: ")) 
+    if primo(numero): 
+        print("Es primo") 
+    else: 
+        print("No es primo") 
+    cond=input("¿quieres ingresar otro Número? ") 
+    if cond == "no": 
+        print("hasta luego, vuelva pronto.") 
+
+
+5.	Solicitar al usuario un número entero y luego un dígito. Informar la cantidad de ocurrencias del dígito en el número, utiliza para ello una función que calcule la frecuencia del dígito en el número ingresado.
+
+def frecuencia(numero, digito):
+    cantidad = 0
+    while numero != 0:
+        ultDigito = numero % 10
+        if ultDigito == digito:
+            cantidad += 1
+        numero = numero // 10
+    return cantidad
+
+print("Digite a continuación un número y después digite que número desea ver cuantas veces se repite en este: ")
+num = int(input("Número: "))
+un_digito = int(input("Dígito: "))
+print("Frecuencia del dígito en el número:", frecuencia(num, un_digito))
+
+
+6.	Escribir un programa que pida números al usuario, mostrar la factorial de cada uno y, al finalizar, la cantidad total de números leídos en total. Utilizar una o más funciones, según sea necesario.
+
+def factorial(numero): 
+   f=1 
+   if numero!=0: 
+       for i in range(1,numero+1): 
+           f=f*i 
+   return f 
+cantidad=0 
+num=int(input("ingrese un Número, si quiere terminar ingrese un -1 para cortar: ")) 
+while num!=-1: 
+    print("Factorial:", factorial(num)) 
+    cantidad+=1 
+    num=int(input("ingrese un Número, si quiere terminar ingrese un -1 para cortar: ")) 
+print("Se leyeron",cantidad,"números ingresados") 
+
+	
+7.	Escribir un programa que pida números positivos al usuario. Mostrar el número cuya sumatoria de dígitos fue mayor y la cantidad de números cuya sumatoria de dígitos fue menor que 10. Utilizar una o más funciones, según sea necesario.
+
+cond="si" 
+def sumaDigitos(numero): 
+  suma=0 
+  while numero!=0: 
+      digito=numero%10 
+      suma=suma+digito 
+      numero=numero//10 
+  return suma 
+cantidad=0 
+mayor=-1 
+numero=int(input("Número positivo: ")) 
+while cond=="si": 
+    if numero>=0: 
+        while numero>=0: 
+            suma=sumaDigitos(numero) 
+            if suma > mayor: 
+                mayor=suma 
+                n_mayorsuma=numero 
+            if suma < 10: 
+                cantidad+=1 
+            print("Sumatoria de dígitos de",n_mayorsuma,":",mayor) 
+            print("Cantidad con sumatoria menor a 10:",cantidad) 
+            cond=input("¿quiere ingresar otro valor?si o no ") 
+            numero=int(input("Número positivo: ")) 
+    else: 
+        print("el numero ingresado es incorrecto") 
+        cond=="si" 
+
+
+8.	Solicitar al usuario el ingreso de números primos. La lectura finalizará cuando ingrese un número que no sea primo. Por cada número, mostrar la suma de sus dígitos. También solicitar al usuario un dígito e informar la cantidad de veces que aparece en el número (frecuencia). Al finalizar el programa, mostrar la factorial del mayor número ingresado
+
+def primo(num):  
+   for i in range(2,num):  
+       if num%i==0:             
+           return False  
+   return True  
+def frecuencia(numero,digito):  
+   cantidad=0  
+   while numero!=0:  
+       ultDigito=numero%10  
+       if ultDigito==digito:  
+           cantidad+=1  
+       numero=numero//10  
+   return cantidad  
+def factorial(numero):  
+   f=1  
+   if numero!=0:  
+       for i in range(1,numero+1):  
+           f=f*i  
+   return f  
+def sumaDigitos(numero):  
+  suma=0  
+  while numero!=0:  
+      digito=numero%10  
+      suma=suma+digito  
+      numero=numero//10  
+  return suma  
+mayor=0  
+agregar = "si"  
+while agregar == "si":  
+    numero=int(input("Ingrese un número primo: "))  
+    while primo(numero):  
+        digito=int(input("Dígito: "))  
+        print("Suma de los dígitos:",sumaDigitos(numero))  
+        print("El",digito,"aparece",frecuencia(numero,digito),"veces")  
+        if numero > mayor:  
+            mayor=numero  
+        break  
+    else:  
+        print("Factorial de",mayor,":",factorial(mayor))  
+        print("El últmo número ingresado no es primo.")  
+        print("El programa ha finalizado con éxito")  
+        break  
+    agregar = input("¿Quiere ingresar otro número? si o no = ")  
+    if agregar == "no":  
+        print("Factorial de",mayor,":",factorial(mayor))  
+        print("El programa ha finalizado con éxito.")  
+        break  
+
+
+9.	Escribir una función que, dado un número de cédula de ciudadanía, retorne True si el número es válido y False si no lo es. Consulta cuál es la longitud válida para cédula en Colombia. 
+
+cond="si" 
+def frecuencia(numero): 
+   cantidad=0 
+   while numero!=0: 
+       ultDigito=numero%10 
+       cantidad+=1 
+       numero=numero//10 
+   return cantidad 
+while cond=="si": 
+    hi=input("""que desea ingresar: 
+    1.Cedula de ciudadania 
+    2.Tarjeta de identidad 
+      = """) 
+    num=int(input("ingrese el numero: ")) 
+    if frecuencia(num)<4 and frecuencia(num)<12: 
+        print("el numero  es invalido") 
+    else: 
+        print("numero es valido") 
+        cond="no" 
+    cond=input("¿quieres volver a ingresar?= ¿si o no? ") 
+    if cond =="no": 
+        print("vuelve pronto...") 
+
+
+10.	Escribir una función que, dada una cadena, retorne la longitud de la última palabra. Se considera que las palabras están separadas por uno o más espacios. También podría haber espacios al principio o al final del string pasado por parámetro.  Consulta sobre la función len() en Python.
+
+cantidad=0 
+def lenUltimaPalabra(cadena): 
+   if len(cadena)==0: 
+       return 0 
+   for i in range(len(cadena)): 
+       if cadena[i]!=' ': 
+           cantidad+=1 
+       else: 
+           if i<len(cadena)-1 and cadena[i+1]!=' ': 
+               cantidad=0 
+   return cantidad 
+cadena = input("Ingrese la cadena o frase = ") 
+if lenUltimaPalabra(cadena): 
+    print(lenUltimaPalabra(cadena)) 
